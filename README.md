@@ -226,6 +226,7 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
   - Refresh the browser to check if the page gets random switch
   
       <img width="400" alt="test_server-01" src="https://user-images.githubusercontent.com/100324443/205280777-799a7ead-55b0-4f6c-803d-f3da76cfc2cd.png">
+      
       <img width="400" alt="test_server-02" src="https://user-images.githubusercontent.com/100324443/205280815-021a77b6-86f7-4d10-933a-f2d4168774bb.png">
       
 ## Step 9 - Test load-balancer
@@ -233,12 +234,14 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
   - Refresh the browser to check if the page gets random switch
   
      <img width="400" alt="test_server-01" src="https://user-images.githubusercontent.com/100324443/205280777-799a7ead-55b0-4f6c-803d-f3da76cfc2cd.png">
+     
      <img width="400" alt="test_server-02" src="https://user-images.githubusercontent.com/100324443/205280815-021a77b6-86f7-4d10-933a-f2d4168774bb.png">
       
 
  
   - Add `/api` at the end of the IP address to check if api works:
      <img width="400" alt="test_server-01_api" src="https://user-images.githubusercontent.com/100324443/205280928-751dca0a-f81f-4c95-8330-01212312b91f.png">
+     
      <img width="400" alt="test_server-02_api" src="https://user-images.githubusercontent.com/100324443/205280950-51b2d27b-0375-4b7f-a4da-84aaf37b3250.png">
 
 
