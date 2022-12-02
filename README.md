@@ -40,7 +40,7 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
   - Choose “San Francisco” → Choose VPC to be “vpc-2420”
   - Choose everything else as same as creating droplets as before, except for setting two droplets and name them at the end. Also, give this droplet a tag
   
-     <img width="941" alt="create_two_servers" src="https://user-images.githubusercontent.com/100324443/205277256-f801cf53-3a9a-4f47-bbfa-bd79345c7c77.png">
+     <img width="700" alt="create_two_servers" src="https://user-images.githubusercontent.com/100324443/205277256-f801cf53-3a9a-4f47-bbfa-bd79345c7c77.png">
 
 - Create a load-balancer:
   - Choose “San Francisco” → Choose VPC to be “vpc-2420”
@@ -54,7 +54,7 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
   - Not change anything of the Outbound Rules
   - Select the tag to be “Web”
   
-     <img width="942" alt="create_firewall" src="https://user-images.githubusercontent.com/100324443/205277753-89ff7efa-bdc7-4194-8db9-db3b1e9f484f.png">
+     <img width="700" alt="create_firewall" src="https://user-images.githubusercontent.com/100324443/205277753-89ff7efa-bdc7-4194-8db9-db3b1e9f484f.png">
 
 ## Step 2 - Set up for server-01 and server-02
 - Log in:
@@ -105,7 +105,7 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
     - Use `sudo chown root: caddy` to change the caddy file’s owner and group to root
     - Use cp to copy caddy to /usr/bin.
     
-       <img width="500" alt="copy_caddy_to_usr_bin" src="https://user-images.githubusercontent.com/100324443/205278509-1964f5b8-97fe-40e2-be94-0ce9407fbe0c.png">
+       <img width="400" alt="copy_caddy_to_usr_bin" src="https://user-images.githubusercontent.com/100324443/205278509-1964f5b8-97fe-40e2-be94-0ce9407fbe0c.png">
 
 
   - Use mkdir to create a .volta directory in `server-01` and `server-02`
@@ -123,12 +123,12 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
   - Write `index.html` in `html` directory
     - Use `vim /html/index.html` to write the html file
     - 
-      <img width="606" alt="server-01_index_html" src="https://user-images.githubusercontent.com/100324443/205278920-8c605d9d-4fd1-49c4-b5dc-f19e14b6a4cc.png">
+      <img width="500" alt="server-01_index_html" src="https://user-images.githubusercontent.com/100324443/205278920-8c605d9d-4fd1-49c4-b5dc-f19e14b6a4cc.png">
 
   - Write `index.js` in `src` directory
     - Use `vim /src/index.js` to write the JavaScript file
     
-      <img width="431" alt="index_js" src="https://user-images.githubusercontent.com/100324443/205278976-20c82d9e-2061-4d57-a125-99a707749cd6.png">
+      <img width="400" alt="index_js" src="https://user-images.githubusercontent.com/100324443/205278976-20c82d9e-2061-4d57-a125-99a707749cd6.png">
 
 - Copy the files and directories to `server-01` and `server-02`:
   - Use `sftp` to connect the `local host` to `server-01` and `server-02`
@@ -143,13 +143,13 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
   - Log in `server-01` and `server-02`
   - Use `ls` to check if the files and directories already there
   
-      <img width="500" alt="check_sftp_copy" src="https://user-images.githubusercontent.com/100324443/205279321-65f45d9a-f749-4a9d-a31f-82008d01c3f8.png">
+      <img width="400" alt="check_sftp_copy" src="https://user-images.githubusercontent.com/100324443/205279321-65f45d9a-f749-4a9d-a31f-82008d01c3f8.png">
 
 - Move the files and directories to correct location:
   - Create `www` directory in `/var`
   - Use `mv` to move the directories to `/var/www`
   
-    <img width="400" alt="move_copied_files" src="https://user-images.githubusercontent.com/100324443/205279362-5c09ad15-cc2b-4bd7-b76d-91f2218372ca.png">
+    <img width="300" alt="move_copied_files" src="https://user-images.githubusercontent.com/100324443/205279362-5c09ad15-cc2b-4bd7-b76d-91f2218372ca.png">
 
 ## Step 5 - Write caddy file
 - Get into `/etc` directory
@@ -167,21 +167,21 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
   - Change `VOLTA_HOME` variable value:
     - Use `vim ~/.bashrc` to open .bashrc file to add variables in both `server-01` and `server-02`
     
-        <img width="400" alt="change_volta_variables" src="https://user-images.githubusercontent.com/100324443/205279544-36b81549-db03-484f-948b-2e16888de945.png">
+        <img width="300" alt="change_volta_variables" src="https://user-images.githubusercontent.com/100324443/205279544-36b81549-db03-484f-948b-2e16888de945.png">
 
     - Use `source ~/.bashrc` to apply for the new changes
     
-        <img width="600" alt="source_variables" src="https://user-images.githubusercontent.com/100324443/205279582-6c2c7ce6-8550-40d2-a560-f3985eacdb3b.png">
+        <img width="300" alt="source_variables" src="https://user-images.githubusercontent.com/100324443/205279582-6c2c7ce6-8550-40d2-a560-f3985eacdb3b.png">
 
 - Install `node`:
   - Use `volta install node` to install node
   
-     <img width="700" alt="install_node" src="https://user-images.githubusercontent.com/100324443/205279656-4f850b9f-70cf-4c80-9e66-47a0b2de3a01.png">
+     <img width="500" alt="install_node" src="https://user-images.githubusercontent.com/100324443/205279656-4f850b9f-70cf-4c80-9e66-47a0b2de3a01.png">
 
 - Install `npm`:
   - Use `npm init` to add `package.json` in `src` directory
   
-    <img width="850" alt="package_json" src="https://user-images.githubusercontent.com/100324443/205279710-3fde1a17-edfa-4a5f-8afa-5d4a78eb8f78.png">
+    <img width="650" alt="package_json" src="https://user-images.githubusercontent.com/100324443/205279710-3fde1a17-edfa-4a5f-8afa-5d4a78eb8f78.png">
 
   - Use npm install fastify to install fastify module
   
@@ -214,22 +214,24 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
 - Change file contents:
   - Change `index.html` content in `server-02`
   
-     <img width="600" alt="server-02_index_html" src="https://user-images.githubusercontent.com/100324443/205280606-1165a92a-7c5d-4460-9d53-1d18f1a7b645.png">
+     <img width="500" alt="server-02_index_html" src="https://user-images.githubusercontent.com/100324443/205280606-1165a92a-7c5d-4460-9d53-1d18f1a7b645.png">
 
   - Change `index.js` content in `server-01` and `server-02`
   
-      <img width="500" alt="server-01_index_js" src="https://user-images.githubusercontent.com/100324443/205280699-dd9640b0-6360-45fe-8420-745e0eb9e833.png">
-      <img width="500" alt="server-02_index_js" src="https://user-images.githubusercontent.com/100324443/205280715-e78c00ef-2da0-4f46-9389-ed8947fd266f.png">
+      <img width="400" alt="server-01_index_js" src="https://user-images.githubusercontent.com/100324443/205280699-dd9640b0-6360-45fe-8420-745e0eb9e833.png">
+      <img width="400" alt="server-02_index_js" src="https://user-images.githubusercontent.com/100324443/205280715-e78c00ef-2da0-4f46-9389-ed8947fd266f.png">
 
 - Test web app and server blocks:
   - Run load-balancer IP address in browser
   - Refresh the browser to check if the page gets random switch
+  
       <img width="400" alt="test_server-01" src="https://user-images.githubusercontent.com/100324443/205280777-799a7ead-55b0-4f6c-803d-f3da76cfc2cd.png">
       <img width="400" alt="test_server-02" src="https://user-images.githubusercontent.com/100324443/205280815-021a77b6-86f7-4d10-933a-f2d4168774bb.png">
       
 ## Step 9 - Test load-balancer
   - Run load-balancer IP address in browser
   - Refresh the browser to check if the page gets random switch
+  
      <img width="400" alt="test_server-01" src="https://user-images.githubusercontent.com/100324443/205280777-799a7ead-55b0-4f6c-803d-f3da76cfc2cd.png">
      <img width="400" alt="test_server-02" src="https://user-images.githubusercontent.com/100324443/205280815-021a77b6-86f7-4d10-933a-f2d4168774bb.png">
       
