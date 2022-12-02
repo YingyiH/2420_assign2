@@ -33,24 +33,28 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
   - Get into “Network” → Choose “VPC”
   - Choose “San Francisco SFO3” → Choose “Generate an IP range for me”
   - Set a name of VPC to be “vpc 2420”
-     ![image](https://user-images.githubusercontent.com/100324443/205243485-e4aa0f7d-89e7-4040-ad3b-62b11583ab86.png)
+  
+     <img width="450" alt="create_VPC" src="https://user-images.githubusercontent.com/100324443/205277301-c357c8ab-7b57-443d-a0d3-066c7b1e8a47.png">
+
 - Create droplets `server-01` and `server-02`:
   - Choose “San Francisco” → Choose VPC to be “vpc-2420”
   - Choose everything else as same as creating droplets as before, except for setting two droplets and name them at the end. Also, give this droplet a tag
-  DONE:
-      ![image](https://user-images.githubusercontent.com/100324443/205243758-5a15a543-3b89-4ec1-b84b-ae8644bfcdcd.png)
+  
+     <img width="941" alt="create_two_servers" src="https://user-images.githubusercontent.com/100324443/205277256-f801cf53-3a9a-4f47-bbfa-bd79345c7c77.png">
+
 - Create a load-balancer:
   - Choose “San Francisco” → Choose VPC to be “vpc-2420”
   - Select the tag “Web”
-  DONE:
-      ![image](https://user-images.githubusercontent.com/100324443/205243967-a329c4b7-cb06-40d9-b6c0-1b792c02f79c.png)
+  
+     <img width="600" alt="create_load_balancer" src="https://user-images.githubusercontent.com/100324443/205277328-521cb494-34b0-48c9-a5d9-95c40e2b2e56.png">
+
 - Create a Firewall in Digital Ocean:
   - Not change anything of the first rule in the Inbound Rules (set it as default)
   - Create a new HTTP rule and set the source to be the load-balancer that we just created
   - Not change anything of the Outbound Rules
   - Select the tag to be “Web”
-  DONE: 
-      ![image](https://user-images.githubusercontent.com/100324443/205244165-2eafc52f-abe4-4c31-a76d-af6c61dd2533.png)
+  
+     <img width="942" alt="create_firewall" src="https://user-images.githubusercontent.com/100324443/205277753-89ff7efa-bdc7-4194-8db9-db3b1e9f484f.png">
 
 ## Step 2 - Set up for server-01 and server-02
 - Log in:
@@ -58,15 +62,17 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
   ```
   ssh -i /Users/doridori/.ssh/<private key name> root@<server-01 IP>
   ```
-     ![image](https://user-images.githubusercontent.com/100324443/205245334-b834b4ca-b868-446e-9204-5a4fc45143fd.png)
-     ![image](https://user-images.githubusercontent.com/100324443/205245361-b5fa86d2-8722-4b5c-93a7-51b59e118f1a.png)
+  
+     <img width="600" alt="server-01_IP" src="https://user-images.githubusercontent.com/100324443/205277846-533489db-1f20-4a95-ba18-b602440dcaf3.png">
+     <img width="500" alt="login_server-01" src="https://user-images.githubusercontent.com/100324443/205277898-d4e3558e-3ae5-4cb9-a1a3-45693e760f96.png">
 
   - Log in server-02
   ```
   ssh -i /Users/doridori/.ssh/<private key name> root@<server-02 IP>
   ```
-     ![image](https://user-images.githubusercontent.com/100324443/205245504-dd6815b6-f6b2-41c0-a3e3-f33642e5c0ff.png)
-     ![image](https://user-images.githubusercontent.com/100324443/205245523-b50eeda0-43b0-48cf-a5a0-abe05f93b850.png)
+  
+     <img width="600" alt="server-02_IP" src="https://user-images.githubusercontent.com/100324443/205278155-33ffb7cf-7f51-428a-b5cf-eeb52f14a023.png">
+     <img width="500" alt="login_server-02" src="https://user-images.githubusercontent.com/100324443/205278178-6e28ca95-7c03-4a95-b572-2ca8aeab2b4a.png">
 
 - Create new server in both `server-01` and `server-02`:
   - Add new user: `useradd -ms /bin/bash <username>`
@@ -87,109 +93,151 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
   - Use `sudo apt upgrade` to update the package to new version
 - Install web server in server-01 and server-02 (Install Caddy):
   - Use `wget https://github.com/caddyserver/caddy/releases/download/v2.6.2/caddy_2.6.2_linux_amd64.tar.gz tar xvf https://github.com/caddyserver/caddy/releases/download/v2.6.2/caddy_2.6.2_linux_amd64.tar.gz` to download the caddy file in both `server-01` and `server-02`
-    ![image](https://user-images.githubusercontent.com/100324443/205251317-d57c9b8b-d782-4a58-abdf-e0c6bdb0915c.png)
+  
+    <img width="970" alt="download_caddy" src="https://user-images.githubusercontent.com/100324443/205278259-2a97046f-9902-441d-b2d4-ef902afb3e1a.png">
+
 
   - Check if caddy files downloaded
-    ![image](https://user-images.githubusercontent.com/100324443/205251467-c12d5b62-eaa7-4e1c-9cd9-a789f8dfa7ea.png)
+  
+    <img width="400" alt="check_caddy" src="https://user-images.githubusercontent.com/100324443/205278432-f33b6d26-597d-49e4-b13c-56df0e3dbd3b.png">
 
   - Copy caddy file to bin directory
     - Use `sudo chown root: caddy` to change the caddy file’s owner and group to root
     - Use cp to copy caddy to /usr/bin.
-       ![image](https://user-images.githubusercontent.com/100324443/205252553-06f460fa-6883-4b8a-9d55-5fb460d8590c.png)
+    
+       <img width="500" alt="copy_caddy_to_usr_bin" src="https://user-images.githubusercontent.com/100324443/205278509-1964f5b8-97fe-40e2-be94-0ce9407fbe0c.png">
+
 
   - Use mkdir to create a .volta directory in `server-01` and `server-02`
-    ![image](https://user-images.githubusercontent.com/100324443/205252690-2e1035bc-2c20-43cc-b939-cbaff7e6def6.png)
+       <img width="970" alt="create_volta_directory" src="https://user-images.githubusercontent.com/100324443/205278558-c015bb19-38f8-47ee-801f-305f518898a6.png">
+
   
 ## Step 4 - Write index.html and index.js
 - Create relative directories in Mac:
   - Use `mkdir` to create new directory named "2420-assign-two"
   - Use `mkdir` to create two directories `html` and `src` in the directory `2420-assign-two`
-      ![image](https://user-images.githubusercontent.com/100324443/205254032-de46da66-a60e-4c5e-80f9-3f4c51dfbaf7.png)
+  
+      <img width="937" alt="create_html_src_directory" src="https://user-images.githubusercontent.com/100324443/205278759-2c2fcbfa-3ae4-4882-8c0f-9ebc5f16ef23.png">
+
 - Write files:
   - Write `index.html` in `html` directory
     - Use `vim /html/index.html` to write the html file
-    
-       <img width="609" alt="Screenshot 2022-12-02 at 12 55 41 AM" src="https://user-images.githubusercontent.com/100324443/205254478-2399c441-b24d-45ac-860d-7f15279a3dee.png">
+    - 
+      <img width="606" alt="server-01_index_html" src="https://user-images.githubusercontent.com/100324443/205278920-8c605d9d-4fd1-49c4-b5dc-f19e14b6a4cc.png">
+
   - Write `index.js` in `src` directory
     - Use `vim /src/index.js` to write the JavaScript file
     
-       <img width="437" alt="Screenshot 2022-12-02 at 12 58 20 AM" src="https://user-images.githubusercontent.com/100324443/205255020-5a262183-b03e-4971-99de-7a1594e669e3.png">
+      <img width="431" alt="index_js" src="https://user-images.githubusercontent.com/100324443/205278976-20c82d9e-2061-4d57-a125-99a707749cd6.png">
+
 - Copy the files and directories to `server-01` and `server-02`:
   - Use `sftp` to connect the `local host` to `server-01` and `server-02`
+  
+    <img width="937" alt="sftp_connect" src="https://user-images.githubusercontent.com/100324443/205279075-6a8cf2db-51d7-4cf9-b871-25ceecbebed4.png">
+
   - Use `put -r` to transfer the directory `html` and `src`
-    ![image](https://user-images.githubusercontent.com/100324443/205255883-295e1729-5ad7-411e-8574-206f44210b8d.png)
-    ![image](https://user-images.githubusercontent.com/100324443/205255939-de2310c7-ace7-48bb-91ab-36f084bc75ae.png)
+  
+    <img width="937" alt="sftp_put" src="https://user-images.githubusercontent.com/100324443/205279108-0d6ef28b-be89-4625-b410-97b0847985b0.png">
+
 - Check if files and directories in `server-01` and `server-02`:
   - Log in `server-01` and `server-02`
   - Use `ls` to check if the files and directories already there
-    ![image](https://user-images.githubusercontent.com/100324443/205256370-b83c30a3-c77f-41d0-90eb-bdfb1eb44087.png)
+  
+      <img width="935" alt="check_sftp_copy" src="https://user-images.githubusercontent.com/100324443/205279321-65f45d9a-f749-4a9d-a31f-82008d01c3f8.png">
+
 - Move the files and directories to correct location:
   - Create `www` directory in `/var`
   - Use `mv` to move the directories to `/var/www`
-    ![image](https://user-images.githubusercontent.com/100324443/205256772-75ad1c8b-2676-476e-a58e-4749fca35012.png)
+  
+    <img width="909" alt="move_copied_files" src="https://user-images.githubusercontent.com/100324443/205279362-5c09ad15-cc2b-4bd7-b76d-91f2218372ca.png">
 
 ## Step 5 - Write caddy file
 - Get into `/etc` directory
 - Use `mkdir` to create `caddy` directory in `server-01` and `server-02`
 - Use `sudo vim /etc/caddy/Caddyfile` to write caddy file
-    ![image](https://user-images.githubusercontent.com/100324443/205257422-d62e03a5-faa9-4de3-9e31-31aa2fd05c24.png)
+
+  <img width="947" alt="Caddyfile" src="https://user-images.githubusercontent.com/100324443/205279429-c39c403a-7d70-4ba1-8c2c-375ac8a998f5.png">
 
 ## Step 6 - Install Volta Node and npm
 - Install `volta`:
   - Use `curl https://get.volta.sh | bash` to install volta
-    ![image](https://user-images.githubusercontent.com/100324443/205257824-82647199-b722-4931-b69a-46c21c781677.png)
+  
+     <img width="940" alt="install_volta" src="https://user-images.githubusercontent.com/100324443/205279504-d349c9eb-bf00-4173-a37f-ede762cf506d.png">
+
   - Change `VOLTA_HOME` variable value:
     - Use `vim ~/.bashrc` to open .bashrc file to add variables in both `server-01` and `server-02`
-         ![image](https://user-images.githubusercontent.com/100324443/205257971-9ec32c49-5300-49c9-84a2-89cd19afdde2.png)
+    
+        <img width="899" alt="change_volta_variables" src="https://user-images.githubusercontent.com/100324443/205279544-36b81549-db03-484f-948b-2e16888de945.png">
+
     - Use `source ~/.bashrc` to apply for the new changes
-        ![image](https://user-images.githubusercontent.com/100324443/205258036-08b9eaf5-6bf6-4ae3-9d5d-66f4a8fd1e07.png)
+    
+        <img width="894" alt="source_variables" src="https://user-images.githubusercontent.com/100324443/205279582-6c2c7ce6-8550-40d2-a560-f3985eacdb3b.png">
+
 - Install `node`:
   - Use `volta install node` to install node
-    ![image](https://user-images.githubusercontent.com/100324443/205258419-8ae7c19d-ea71-48f8-b081-ef0dc5a1ddc0.png)
+  
+     <img width="936" alt="install_node" src="https://user-images.githubusercontent.com/100324443/205279656-4f850b9f-70cf-4c80-9e66-47a0b2de3a01.png">
+
 - Install `npm`:
   - Use `npm init` to add `package.json` in `src` directory
-    ![image](https://user-images.githubusercontent.com/100324443/205258794-cda8c54c-8a4c-4375-bb30-12cf98d581de.png)
+  
+    <img width="937" alt="package_json" src="https://user-images.githubusercontent.com/100324443/205279710-3fde1a17-edfa-4a5f-8afa-5d4a78eb8f78.png">
+
   - Use npm install fastify to install fastify module
-    ![image](https://user-images.githubusercontent.com/100324443/205258856-0e0a8bf1-16ff-44e7-9ae4-ee5eadc8ae02.png)
+  
+     <img width="926" alt="install_fastify" src="https://user-images.githubusercontent.com/100324443/205279736-4b163e38-4e1d-4634-b5a6-c31824119099.png">
 
 ## Step 7 - Write and enable caddy service and web app service
 - Write service files:
   - Use `sudo vim /etc/systemd/system/caddy.service` to write `caddy.serivce`
-    <img width="517" alt="Screenshot 2022-11-30 at 8 54 25 PM" src="https://user-images.githubusercontent.com/100324443/205259666-5ddce813-8d76-49ea-9ee8-19804dfe43e5.png">
+  
+     <img width="517" alt="caddy_service" src="https://user-images.githubusercontent.com/100324443/205280467-7e4340ee-4ada-4b0a-a15a-f0e607be16eb.png">
+
+
   - Use `sudo vim /etc/systemd/system/hello_web.service` to write `hello_web.service`
-    ![image](https://user-images.githubusercontent.com/100324443/205260088-16136b73-a3ba-4f9b-9edb-619a3e218d27.png)
+  
+     <img width="935" alt="hello_web_service" src="https://user-images.githubusercontent.com/100324443/205279816-8af55e6e-2780-4b31-b8ec-22a01761ff49.png">
+
 - Enable and restart services:
   - Use `sudo systemctl daemon-reload` to reload
   - Use `sudo systemctl disable <server-name>` to disable services at first
   - Use `sudo systemctl enable <server name>` to enable services
   - Use `sudo systemctl restart <server name>` to restart services
   - Use `sudo systemctl status <server name>` to check if services are activated
-    ![image](https://user-images.githubusercontent.com/100324443/205260787-9dadd185-9be6-4082-8a7a-7b942543627b.png)
-    <img width="1470" alt="Screenshot 2022-12-02 at 1 28 37 AM" src="https://user-images.githubusercontent.com/100324443/205260920-74425a79-ef06-4636-a9c4-43b861e8b122.png">
-
+  
+     <img width="1461" alt="hello_web_service_status" src="https://user-images.githubusercontent.com/100324443/205280555-5265daf2-3487-4978-ad2f-40dbce6b4861.png">
+     <img width="949" alt="caddy_service_status" src="https://user-images.githubusercontent.com/100324443/205280580-52619bb7-2b97-4f43-b5fd-3588a27bb46d.png">
+     
 ## Step 8 - Change file contents in server-02 and test files
 - Change owner and group of `index.html` in both `server-01` and `server-02`:
   
 - Change file contents:
   - Change `index.html` content in `server-02`
-      ![image](https://user-images.githubusercontent.com/100324443/205261889-239e875d-9dfb-425d-89fe-2fd9179fe9b9.png)
+  
+     <img width="942" alt="server-02_index_html" src="https://user-images.githubusercontent.com/100324443/205280606-1165a92a-7c5d-4460-9d53-1d18f1a7b645.png">
+
   - Change `index.js` content in `server-01` and `server-02`
-      ![image](https://user-images.githubusercontent.com/100324443/205262099-286270c3-5d01-4c77-b1de-7a1286921d18.png)
-      ![image](https://user-images.githubusercontent.com/100324443/205262141-a56aa2c1-2682-4c0b-a5a0-f0e1a3b4c961.png)
+  
+      <img width="943" alt="server-01_index_js" src="https://user-images.githubusercontent.com/100324443/205280699-dd9640b0-6360-45fe-8420-745e0eb9e833.png">
+      <img width="944" alt="server-02_index_js" src="https://user-images.githubusercontent.com/100324443/205280715-e78c00ef-2da0-4f46-9389-ed8947fd266f.png">
+
 - Test web app and server blocks:
   - Run load-balancer IP address in browser
   - Refresh the browser to check if the page gets random switch
-      ![image](https://user-images.githubusercontent.com/100324443/205262697-678bd921-dac0-42b8-a3ca-2abee3462f7b.png)
-      ![image](https://user-images.githubusercontent.com/100324443/205262728-5a324a2d-fffe-473a-b3ab-4f0bc3479387.png)
-
+      <img width="911" alt="test_server-01" src="https://user-images.githubusercontent.com/100324443/205280777-799a7ead-55b0-4f6c-803d-f3da76cfc2cd.png">
+      <img width="905" alt="test_server-02" src="https://user-images.githubusercontent.com/100324443/205280815-021a77b6-86f7-4d10-933a-f2d4168774bb.png">
+      
 ## Step 9 - Test load-balancer
   - Run load-balancer IP address in browser
   - Refresh the browser to check if the page gets random switch
-      ![image](https://user-images.githubusercontent.com/100324443/205262697-678bd921-dac0-42b8-a3ca-2abee3462f7b.png)
-      ![image](https://user-images.githubusercontent.com/100324443/205262728-5a324a2d-fffe-473a-b3ab-4f0bc3479387.png)
+     <img width="911" alt="test_server-01" src="https://user-images.githubusercontent.com/100324443/205280777-799a7ead-55b0-4f6c-803d-f3da76cfc2cd.png">
+     <img width="905" alt="test_server-02" src="https://user-images.githubusercontent.com/100324443/205280815-021a77b6-86f7-4d10-933a-f2d4168774bb.png">
+      
+
+ 
   - Add `/api` at the end of the IP address to check if api works:
-      <img width="335" alt="Screenshot 2022-12-02 at 1 40 43 AM" src="https://user-images.githubusercontent.com/100324443/205263255-472e412e-bf2f-4cc2-a828-07ed6aa69078.png">
-      <img width="372" alt="Screenshot 2022-12-02 at 1 41 12 AM" src="https://user-images.githubusercontent.com/100324443/205263356-90488730-4550-4122-bc80-639a3014c032.png">
+     <img width="658" alt="test_server-01_api" src="https://user-images.githubusercontent.com/100324443/205280928-751dca0a-f81f-4c95-8330-01212312b91f.png">
+     <img width="672" alt="test_server-02_api" src="https://user-images.githubusercontent.com/100324443/205280950-51b2d27b-0375-4b7f-a4da-84aaf37b3250.png">
 
 
 
