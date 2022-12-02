@@ -108,8 +108,39 @@
     ![image](https://user-images.githubusercontent.com/100324443/205257422-d62e03a5-faa9-4de3-9e31-31aa2fd05c24.png)
 
 ## Step 6: Install `volta`, `node` and `npm`
+- Install `volta`:
+  - Use `curl https://get.volta.sh | bash` to install volta
+      ![image](https://user-images.githubusercontent.com/100324443/205257824-82647199-b722-4931-b69a-46c21c781677.png)
+  - Change `VOLTA_HOME` variable value:
+    - Use `vim ~/.bashrc` to open .bashrc file to add variables in both `server-01` and `server-02`
+         ![image](https://user-images.githubusercontent.com/100324443/205257971-9ec32c49-5300-49c9-84a2-89cd19afdde2.png)
+    - Use `source ~/.bashrc` to apply for the new changes
+        ![image](https://user-images.githubusercontent.com/100324443/205258036-08b9eaf5-6bf6-4ae3-9d5d-66f4a8fd1e07.png)
+- Install `node`:
+  - Use `volta install node` to install node
+    ![image](https://user-images.githubusercontent.com/100324443/205258419-8ae7c19d-ea71-48f8-b081-ef0dc5a1ddc0.png)
+- Install `npm`:
+  - Use `npm init` to add `package.json` in `src` directory
+    ![image](https://user-images.githubusercontent.com/100324443/205258794-cda8c54c-8a4c-4375-bb30-12cf98d581de.png)
+  - Use npm install fastify to install fastify module
+    ![image](https://user-images.githubusercontent.com/100324443/205258856-0e0a8bf1-16ff-44e7-9ae4-ee5eadc8ae02.png)
 
+## Step 7: Write `caddy.service` and `hello_web.service`, and enable them
+- Write service files:
+  - Use `sudo vim /etc/systemd/system/caddy.service` to write `caddy.serivce`
+    <img width="517" alt="Screenshot 2022-11-30 at 8 54 25 PM" src="https://user-images.githubusercontent.com/100324443/205259666-5ddce813-8d76-49ea-9ee8-19804dfe43e5.png">
+  - Use `sudo vim /etc/systemd/system/hello_web.service` to write `hello_web.service`
+    ![image](https://user-images.githubusercontent.com/100324443/205260088-16136b73-a3ba-4f9b-9edb-619a3e218d27.png)
+- Enable and restart services:
+  - Use `sudo systemctl daemon-reload` to reload
+  - Use `sudo systemctl disable <server-name>` to disable services at first
+  - Use `sudo systemctl enable <server name>` to enable services
+  - Use `sudo systemctl restart <server name>` to restart services
+  - Use `sudo systemctl status <server name>` to check if services are activated
+    ![image](https://user-images.githubusercontent.com/100324443/205260787-9dadd185-9be6-4082-8a7a-7b942543627b.png)
+    <img width="1470" alt="Screenshot 2022-12-02 at 1 28 37 AM" src="https://user-images.githubusercontent.com/100324443/205260920-74425a79-ef06-4636-a9c4-43b861e8b122.png">
 
+## Step 8: 
 
 
 
