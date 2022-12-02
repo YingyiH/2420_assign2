@@ -140,7 +140,26 @@
     ![image](https://user-images.githubusercontent.com/100324443/205260787-9dadd185-9be6-4082-8a7a-7b942543627b.png)
     <img width="1470" alt="Screenshot 2022-12-02 at 1 28 37 AM" src="https://user-images.githubusercontent.com/100324443/205260920-74425a79-ef06-4636-a9c4-43b861e8b122.png">
 
-## Step 8: 
+## Step 8: Change file contents in `server-02` and test files
+- Change owner and group of `index.html` in both `server-01` and `server-02`:
+  
+- Change file contents:
+  - Change `index.html` content in `server-02`
+      ![image](https://user-images.githubusercontent.com/100324443/205261889-239e875d-9dfb-425d-89fe-2fd9179fe9b9.png)
+  - Change `index.js` content in `server-01` and `server-02`
+      ![image](https://user-images.githubusercontent.com/100324443/205262099-286270c3-5d01-4c77-b1de-7a1286921d18.png)
+      ![image](https://user-images.githubusercontent.com/100324443/205262141-a56aa2c1-2682-4c0b-a5a0-f0e1a3b4c961.png)
+- Test web app and server blocks:
+  - Run load-balancer IP address in browser
+  - Refresh the browser to check if the page gets random switch
+      ![image](https://user-images.githubusercontent.com/100324443/205262697-678bd921-dac0-42b8-a3ca-2abee3462f7b.png)
+      ![image](https://user-images.githubusercontent.com/100324443/205262728-5a324a2d-fffe-473a-b3ab-4f0bc3479387.png)
+
+## Step 9: Test load-balancer
+![image](https://user-images.githubusercontent.com/100324443/205262697-678bd921-dac0-42b8-a3ca-2abee3462f7b.png)
+![image](https://user-images.githubusercontent.com/100324443/205262728-5a324a2d-fffe-473a-b3ab-4f0bc3479387.png)
+<img width="335" alt="Screenshot 2022-12-02 at 1 40 43 AM" src="https://user-images.githubusercontent.com/100324443/205263255-472e412e-bf2f-4cc2-a828-07ed6aa69078.png">
+<img width="372" alt="Screenshot 2022-12-02 at 1 41 12 AM" src="https://user-images.githubusercontent.com/100324443/205263356-90488730-4550-4122-bc80-639a3014c032.png">
 
 
 
