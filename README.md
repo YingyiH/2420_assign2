@@ -74,7 +74,21 @@
   ![image](https://user-images.githubusercontent.com/100324443/205252690-2e1035bc-2c20-43cc-b939-cbaff7e6def6.png)
   
 ## Step 4: Write `index.html` and `index.js`
-- In Mac, use `mkdir` to create new directory named "2420-assign-two"
+- Create relative directories in Mac:
+  - Use `mkdir` to create new directory named "2420-assign-two"
+  - Use `mkdir` to create two directories `html` and `src` in the directory `2420-assign-two`
+      ![image](https://user-images.githubusercontent.com/100324443/205254032-de46da66-a60e-4c5e-80f9-3f4c51dfbaf7.png)
+- Write files:
+  - Write `index.html` in `html` directory
+    - Use `vim /html/index.html` to write the html file
+    
+        <img width="609" alt="Screenshot 2022-12-02 at 12 55 41 AM" src="https://user-images.githubusercontent.com/100324443/205254478-2399c441-b24d-45ac-860d-7f15279a3dee.png">
+  - Write `index.js` in `src` directory
+    - Use `vim /src/index.js` to write the JavaScript file
+    
+        <img width="437" alt="Screenshot 2022-12-02 at 12 58 20 AM" src="https://user-images.githubusercontent.com/100324443/205255020-5a262183-b03e-4971-99de-7a1594e669e3.png">
+
+
 
 
 
