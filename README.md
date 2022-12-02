@@ -101,7 +101,13 @@
   - Use `mv` to move the directories to `/var/www`
       ![image](https://user-images.githubusercontent.com/100324443/205256772-75ad1c8b-2676-476e-a58e-4749fca35012.png)
 
+## Step 5: Write caddy file
+- Get into `/etc` directory
+- Use `mkdir` to create `caddy` directory in `server-01` and `server-02`
+- Use `sudo vim /etc/caddy/Caddyfile` to write caddy file
+    ![image](https://user-images.githubusercontent.com/100324443/205257422-d62e03a5-faa9-4de3-9e31-31aa2fd05c24.png)
 
+## Step 6: Install `volta`, `node` and `npm`
 
 
 
