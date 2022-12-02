@@ -87,6 +87,20 @@
     - Use `vim /src/index.js` to write the JavaScript file
     
         <img width="437" alt="Screenshot 2022-12-02 at 12 58 20 AM" src="https://user-images.githubusercontent.com/100324443/205255020-5a262183-b03e-4971-99de-7a1594e669e3.png">
+- Copy the files and directories to `server-01` and `server-02`:
+  - Use `sftp` to connect the `local host` to `server-01` and `server-02`
+  - Use `put -r` to transfer the directory `html` and `src`
+      ![image](https://user-images.githubusercontent.com/100324443/205255883-295e1729-5ad7-411e-8574-206f44210b8d.png)
+      ![image](https://user-images.githubusercontent.com/100324443/205255939-de2310c7-ace7-48bb-91ab-36f084bc75ae.png)
+- Check if files and directories in `server-01` and `server-02`:
+  - Log in `server-01` and `server-02`
+  - Use `ls` to check if the files and directories already there
+    ![image](https://user-images.githubusercontent.com/100324443/205256370-b83c30a3-c77f-41d0-90eb-bdfb1eb44087.png)
+- Move the files and directories to correct location:
+  - Create `www` directory in `/var`
+  - Use `mv` to move the directories to `/var/www`
+      ![image](https://user-images.githubusercontent.com/100324443/205256772-75ad1c8b-2676-476e-a58e-4749fca35012.png)
+
 
 
 
