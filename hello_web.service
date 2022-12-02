@@ -1,0 +1,13 @@
+[Unit]
+Description=a web app service file
+After=network.target
+
+[Service]
+Type=simple
+User=server
+Group=server
+ExecStart=/home/server/.volta/bin/node /var/www/src/index.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

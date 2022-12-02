@@ -1,0 +1,22 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YingyiH/2420_assign2.git"
+  },
+  "author": "Yingyi He",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YingyiH/2420_assign2/issues"
+  },
+  "homepage": "https://github.com/YingyiH/2420_assign2#readme",
+  "dependencies": {
+    "fastify": "^4.10.2"
+  }
+}
