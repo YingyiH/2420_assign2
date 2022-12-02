@@ -1,6 +1,9 @@
 # 2420_assign2
 2420_assignment2
 
+Student: Yingyi He
+Student ID: A01230375
+
 ## Step 1: Set up 
 - Create a VPC:
   - Get into “Network” → Choose “VPC”
