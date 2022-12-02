@@ -240,6 +240,7 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
 
  
   - Add `/api` at the end of the IP address to check if api works:
+  
      <img width="400" alt="test_server-01_api" src="https://user-images.githubusercontent.com/100324443/205280928-751dca0a-f81f-4c95-8330-01212312b91f.png">
      
      <img width="400" alt="test_server-02_api" src="https://user-images.githubusercontent.com/100324443/205280950-51b2d27b-0375-4b7f-a4da-84aaf37b3250.png">
