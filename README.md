@@ -74,11 +74,20 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
      <img width="600" alt="server-02_IP" src="https://user-images.githubusercontent.com/100324443/205278155-33ffb7cf-7f51-428a-b5cf-eeb52f14a023.png">
      <img width="500" alt="login_server-02" src="https://user-images.githubusercontent.com/100324443/205278178-6e28ca95-7c03-4a95-b572-2ca8aeab2b4a.png">
 
-- Create new server in both `server-01` and `server-02`:
+- Create new user in both `server-01` and `server-02`:
   - Add new user: `useradd -ms /bin/bash <username>`
+  
+     <img width="400" alt="create_new_user" src="https://user-images.githubusercontent.com/100324443/205422876-591971ed-bf5c-415c-926d-1e2b247d99ea.png">
   - Add user to sudo: `usermod -aG sudo <username>`
   - Change new user password: `passwd <username>`
+
+     <img width="400" alt="change_user_sudo" src="https://user-images.githubusercontent.com/100324443/205422906-2de8dfea-e650-43fd-b73c-96b4119dd3e0.png">
+
   - Log in as new user: `su <username>`
+  
+     <img width="500" alt="log_in_new_user" src="https://user-images.githubusercontent.com/100324443/205422916-1e129c47-e0b7-4bd9-969a-45fc18471bd5.png">
+
+  
 - Copy ssh public key in `server-01` and `server-02` to connect Mac and servers:
   - Use `cd` to open directory `.ssh` in Mac
   - Use `cat` to show `<key name>.pub`
@@ -86,6 +95,8 @@ Check this IP address and keep refreshing to switch two website: http://24.199.7
   - Create `.ssh` directory in `/home/<username>` directory in `server-01` and `server-02`
   - Use `vim /home/<username>/.ssh/authorized_keys` to create an authorized_keys file
   - Paste the public key in `authorized_keys` file
+  
+    <img width="1408" alt="authorized_keys" src="https://user-images.githubusercontent.com/100324443/205423045-f53a8e6d-e0dd-4a47-b531-3c8319a3a60c.png">
 
 ## Step 3 - Install Caddy web server and create .volta directory
 - Update in both server-01 and server-02:
