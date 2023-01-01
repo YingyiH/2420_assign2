@@ -1,10 +1,8 @@
-# 2420_assign2
-2420_assignment2
+# Load-Balance Project
+Load-Balance Project
 
 ## Author
 - Student: Yingyi He
-- Student: A01230375
-- Set: Set B 
 
 ## Description
 This repository contains files and directories in terms of building a virtual private cloud(VPC) to group cloud resources together. 
@@ -14,7 +12,7 @@ This Readme file mostly for MacOS user.
 Check this IP address and keep refreshing to switch two website: http://24.199.71.1
 
 ## Table Content ##
-- [2420_assign2](#2420-assign2)
+- [Load-Balance-Project](#Load-Balance-Project)
   * [Author](#author)
   * [Description](#description)
   * [Table Content](#table-content)
